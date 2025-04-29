@@ -1,0 +1,99 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(79, 159, 255, 0.1);
+  }
+  
+  .logo {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  
+  .logoLink {
+    text-decoration: none;
+    color: var(--neon);
+    text-shadow: var(--neon-glow);
+    transition: text-shadow 0.3s ease;
+  }
+  
+  .logoLink:hover {
+    text-shadow: 0 0 10px var(--neon);
+  }
+  
+  .navLinks {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+  
+  .navLinks li {
+    position: relative;
+  }
+  
+  .navLinks li.active::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--neon);
+    box-shadow: 0 0 5px var(--neon);
+  }
+  
+  .navLinks li a {
+    text-decoration: none;
+    color: var(--foreground);
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+    font-size: 1.1rem;
+  }
+  
+  .navLinks li a:hover {
+    color: var(--neon);
+  }
+  
+  .mobileMenuButton {
+    display: none;
+    cursor: pointer;
+    color: var(--foreground);
+  }
+  
+  @media (max-width: 768px) {
+    .mobileMenuButton {
+      display: block;
+      z-index: 100;
+    }
+  
+    .navLinks {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      height: 100vh;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 6rem 2rem 2rem;
+      transition: right 0.3s ease;
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+      z-index: 50;
+    }
+  
+    .navLinks.active {
+      right: 0;
+    }
+  }
+  

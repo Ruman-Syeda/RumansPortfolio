@@ -1,0 +1,412 @@
+.contactPage {
+    min-height: 100vh;
+    padding: 2rem 0;
+    padding-top: 80px;
+  }
+  
+  .contactContent {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  @media (min-width: 768px) {
+    .contactContent {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .contactInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .contactText {
+    line-height: 1.7;
+    color: var(--foreground-secondary);
+    margin-bottom: 1rem;
+  }
+  
+  .contactDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .contactItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.2rem;
+    background-color: rgba(3, 7, 18, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 3px solid var(--neon);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .contactItem::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 238, 255, 0) 0%, rgba(0, 238, 255, 0.05) 50%, rgba(0, 238, 255, 0) 100%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+  }
+  
+  .contactItem:hover::before {
+    transform: translateX(100%);
+  }
+  
+  .contactIcon {
+    padding: 0.75rem;
+    background-color: rgba(0, 238, 255, 0.1);
+    border-radius: 50%;
+    color: var(--neon);
+    box-shadow: 0 0 10px rgba(0, 238, 255, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .contactItem:hover .contactIcon {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.5);
+  }
+  
+  .contactItem h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: var(--foreground);
+  }
+  
+  .contactItem p {
+    color: var(--foreground-secondary);
+  }
+  
+  .clickToCopy {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: var(--neon);
+    opacity: 0.7;
+  }
+  
+  .socialLinks {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .socialLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(3, 7, 18, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    color: var(--foreground);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .socialLink::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+  
+  .socialLink:hover {
+    color: white;
+    transform: translateY(-5px);
+  }
+  
+  .socialLink:hover::before {
+    opacity: 1;
+  }
+  
+  .contactForm {
+    background-color: rgba(3, 7, 18, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0, 238, 255, 0.1);
+  }
+  
+  .contactForm::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--primary), var(--secondary));
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.5);
+  }
+  
+  .formGroup {
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  
+  .formGroup label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--foreground);
+    transition: color 0.3s ease;
+  }
+  
+  .formInput,
+  .formTextarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(0, 238, 255, 0.2);
+    border-radius: 4px;
+    background-color: rgba(3, 7, 18, 0.3);
+    color: var(--foreground);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .formInput:focus,
+  .formTextarea:focus {
+    outline: none;
+    border-color: var(--neon);
+    box-shadow: 0 0 0 2px rgba(0, 238, 255, 0.2);
+  }
+  
+  .formGroup:focus-within label {
+    color: var(--neon);
+  }
+  
+  .formTextarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  
+  .inputError {
+    border-color: #ff4757 !important;
+    box-shadow: 0 0 0 1px rgba(255, 71, 87, 0.2);
+  }
+  
+  .errorText {
+    color: #ff4757;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+  }
+  
+  .submitButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    min-width: 150px;
+  }
+  
+  .submitButton::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transition: left 0.7s ease;
+  }
+  
+  .submitButton:hover::before {
+    left: 100%;
+  }
+  
+  .submitButton:hover {
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.5);
+  }
+  
+  .submitButton:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  .sendIcon {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+  }
+  
+  .submitButton:hover .sendIcon {
+    transform: translateX(3px);
+  }
+  
+  .loadingSpinner {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .successMessage {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background-color: rgba(46, 213, 115, 0.1);
+    border-left: 3px solid #2ed573;
+    color: #2ed573;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .errorMessage {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background-color: rgba(255, 71, 87, 0.1);
+    border-left: 3px solid #ff4757;
+    color: #ff4757;
+    border-radius: 4px;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .errorDetail {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+  
+  .directEmailButtons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .emailButton {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(0, 238, 255, 0.1);
+    color: var(--neon);
+    border: 1px solid var(--neon);
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .emailButton:hover {
+    background: rgba(0, 238, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.4);
+    transform: translateY(-3px);
+  }
+  
+  .copyButton {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    color: var(--foreground-secondary);
+    border: 1px solid var(--foreground-muted);
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .copyButton:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--foreground-secondary);
+    transform: translateY(-3px);
+  }
+  
+  .formNote {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background-color: rgba(0, 238, 255, 0.05);
+    border-left: 3px solid var(--neon);
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+  }
+  
+  .formNote p {
+    font-size: 0.9rem;
+    color: var(--foreground-secondary);
+  }
+  
+  .loadingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    gap: 1rem;
+  }
+  
+  .loadingContainer p {
+    color: var(--foreground-secondary);
+    font-size: 1.1rem;
+  }
+  
+  .loadingSpinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(79, 159, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--neon);
+    animation: spin 1s ease-in-out infinite;
+    box-shadow: 0 0 10px rgba(79, 159, 255, 0.5);
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  

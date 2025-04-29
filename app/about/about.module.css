@@ -1,0 +1,209 @@
+.aboutPage {
+    min-height: 100vh;
+    padding: 2rem 0;
+    padding-top: 80px;
+  }
+  
+  .aboutContent {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .profileSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .profileSection {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+  
+  .profileImage {
+    flex-shrink: 0;
+    position: relative;
+  }
+  
+  .avatar {
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--neon);
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.5);
+  }
+  
+  .profileInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .profileInfo h2 {
+    font-size: 2rem;
+    color: var(--neon);
+    text-shadow: 0 0 10px var(--neon);
+  }
+  
+  .bio {
+    line-height: 1.7;
+    color: var(--foreground-secondary);
+  }
+  
+  .contactDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .contactItem {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--foreground-muted);
+  }
+  
+  .resumeDownload {
+    margin-top: 1rem;
+  }
+  
+  .downloadButton {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: white;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    max-width: fit-content;
+  }
+  
+  .downloadButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(79, 159, 255, 0.5);
+  }
+  
+  .sections {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .sections {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .sectionTitle {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    color: var(--neon);
+    text-shadow: 0 0 5px var(--neon);
+  }
+  
+  .educationItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .educationItem h4 {
+    font-size: 1.2rem;
+    color: var(--foreground);
+  }
+  
+  .institution,
+  .period {
+    color: var(--foreground-muted);
+    font-size: 0.9rem;
+  }
+  
+  .gpa {
+    color: var(--neon);
+    font-weight: bold;
+  }
+  
+  .interestsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  
+  .interestItem {
+    background-color: rgba(0, 150, 255, 0.1);
+    padding: 0.75rem;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid rgba(0, 238, 255, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .interestItem:hover {
+    background-color: rgba(0, 150, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 0 10px rgba(0, 238, 255, 0.3);
+  }
+  
+  .coursesSection {
+    width: 100%;
+    padding: 1.5rem;
+  }
+  
+  .coursesGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .coursesGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .courseItem {
+    background-color: rgba(0, 150, 255, 0.05);
+    padding: 1rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--neon);
+    transition: all 0.3s ease;
+  }
+  
+  .courseItem:hover {
+    background-color: rgba(0, 150, 255, 0.1);
+    transform: translateX(5px);
+  }
+  
+  .courseItem h4 {
+    font-size: 1.1rem;
+    color: var(--foreground);
+    margin-bottom: 0.5rem;
+  }
+  
+  .courseInfo {
+    color: var(--foreground-muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .courseDescription {
+    color: var(--foreground-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
