@@ -29,7 +29,7 @@ export default function AboutPage() {
               transition={{ duration: 0.5 }}
             >
               <Image
-                src="/placeholder.svg?height=300&width=300"
+                src="/dp.jpg?height=300&width=300"
                 alt="Ruman Syeda"
                 width={300}
                 height={300}
