@@ -23,7 +23,7 @@ export async function POST(request) {
     // Return success with the mailto link
     return NextResponse.json({
       success: true,
-      message: "Contact information processed",
+      message: "Contact information processed. Opening email client as fallback.",
       mailtoLink,
     })
   } catch (error) {

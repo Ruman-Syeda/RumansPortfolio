@@ -10,7 +10,6 @@ import styles from "./experience.module.css"
 export default function ExperiencePage() {
   const [activeTab, setActiveTab] = useState("projects")
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -31,7 +30,6 @@ export default function ExperiencePage() {
     },
   }
 
-  // Education data from resume
   const education = [
     {
       institution: "Centennial College",
@@ -43,7 +41,6 @@ export default function ExperiencePage() {
     },
   ]
 
-  // Courses data from resume
   const courses = [
     {
       title: "Unix/Linux Operating Systems",
@@ -87,44 +84,80 @@ export default function ExperiencePage() {
     },
   ]
 
-  // Projects data from resume
   const projects = [
     {
       title: "Centennial Connect",
       subtitle: "Networking Platform",
       period: "Jan 2025 – Present",
-      image: "/placeholder.svg?height=200&width=350",
+      image: "/Connect.png?height=200&width=350",
       description:
         "A MERN-based networking platform for Centennial College students, alumni, and staff, ensuring seamless functionality across web and mobile platforms. Implementing Agile methodologies for efficient sprint management and collaboration.",
       technologies: ["React", "Node.js", "MongoDB", "Express", "MERN"],
+      link: "https://centennial-connect-official.onrender.com/",
     },
     {
       title: "Booky",
       subtitle: "Book Management App",
       period: "Nov 2024 – Dec 2024",
-      image: "/placeholder.svg?height=200&width=350",
+      image: "/Booky.png?height=200&width=350",
       description:
         "A MERN-based book management web application, ensuring seamless functionality across desktops, tablets, and mobile devices. Implemented secure user authentication and real-time book tracking for an enhanced user experience.",
       technologies: ["React", "Node.js", "MongoDB", "Express", "MERN"],
+      link: "https://booky-le7y.onrender.com/",
     },
     {
       title: "Real Estate Agent's Website",
       subtitle: "Responsive Website Using the Given Wireframe",
       period: "Apr 2024 – Apr 2024",
-      image: "/placeholder.svg?height=200&width=350",
+      image: "/realestate.png?height=200&width=350",
+      description:
+        "Developed a responsive website for a real estate agent using HTML and CSS, adhering to the provided wireframe. Ensured seamless functionality across desktops, tablets, and mobile devices. Followed best practices for responsive design and ensured compliance with Article 508 accessibility standards by avoiding non-compliant HTML tags.",
+      technologies: ["HTML", "CSS", "Responsive Design", "Accessibility"],
+      link: "http://studentweb.cencol.ca/usyeda1/Final%20Project/FinalProject.html",
+    },
+    {
+      title: "Maple Care",
+      subtitle: "Hackathon Project – Action Canada",
+      period: "Mar 2024 – Mar 2024",
+      image: "/Maple.png?height=200&width=350",
+      description:
+        "A responsive website developed during a hackathon hosted by Action Canada. Designed to empower policy advocates with tools to access, compare, and understand key healthcare-related policies across Canadian provinces. Features include a policy comparison module and intuitive navigation for accessibility.",
+      technologies: ["Figma", "Next","HTML","CSS", "JavaScript", "Responsive Design", "Policy Comparison"],
+      link: "https://care-compare-canada.lovable.app/", // replace with your actual repo or live link if different
+    },
+    {
+      title: "Responsive Wireframe Website",
+      subtitle: "Responsive Website Using the Given Wireframe",
+      period: "Apr 2024 – Apr 2024",
+      image: "/WireFrame.png?height=200&width=350",
       description:
         "Developed a responsive website using HTML, CSS and best practices ensuring seamless functionality across desktops, tablets, and mobile devices. Ensured adherence to Article 508 accessibility principles by avoiding non-compliant HTML tags in website development.",
       technologies: ["HTML", "CSS", "Responsive Design", "Accessibility"],
+      link: "http://studentweb.cencol.ca/usyeda1/213Assignment4/assignment4.html#",
     },
     {
-      title: "Problem-solving with logic in C#",
-      subtitle: "Methods and Arrays",
-      period: "Mar 2024 – Mar 2024",
-      image: "/placeholder.svg?height=200&width=350",
+      title: "Portfolio Website",
+      subtitle: "Personal Portfolio Website",
+      period: "Jan 2024 – Present",
+      image: "/portfolio.png?height=200&width=350",
       description:
-        "Demonstrated exceptional proficiency by completing 50 C# programming challenges within a rigorous timeframe of 3 days.",
-      technologies: ["C#", "Algorithms", "Problem Solving", "Data Structures"],
+        "A personal portfolio website showcasing my skills, projects, and experience. Built using Next.js, React, and Tailwind CSS for a modern and responsive design.",
+      technologies: ["Next.js", "React", "Tailwind CSS"],
+      link: "https://rumanportfolio.onrender.com/",
     },
+    {
+      title: "Centennial Connect – Figma Prototype",
+      subtitle: "UI/UX Design for a Networking Platform",
+      period: "Dec 2024",
+      image: "/prototype.png?height=200&width=350", // replace with actual image or placeholder
+      description:
+        "Designed a comprehensive high-fidelity Figma prototype for Centennial Connect, a networking platform tailored for students, alumni, and faculty. Focused on intuitive navigation, accessibility compliance, and mobile-first responsiveness. The prototype includes user flows for login, profile creation, group collaboration, event browsing, and chat features.",
+      technologies: ["Figma", "UI/UX Design", "Prototyping", "Accessibility"],
+      link: "https://www.figma.com/design/cgcptIUdbv93rXHkKG5noi/Nerve-Wrecker-s-team-library?t=V7icTptQ43zaPoaf-0", // replace with actual Figma URL
+    }
+    
+    
+
   ]
 
   return (
@@ -166,8 +199,11 @@ export default function ExperiencePage() {
               className={styles.projectsGrid}
             >
               {projects.map((project, index) => (
-                <motion.div
+                <motion.a
                   key={index}
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={styles.projectCard}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -199,7 +235,7 @@ export default function ExperiencePage() {
                       ))}
                     </div>
                   </div>
-                </motion.div>
+                </motion.a>
               ))}
             </motion.div>
           )}

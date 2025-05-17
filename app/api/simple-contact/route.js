@@ -1,8 +1,4 @@
 import { NextResponse } from "next/server"
-import { Resend } from "resend"
-
-// Initialize Resend with the API key
-const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request) {
   try {
@@ -19,13 +15,7 @@ export async function POST(request) {
       return NextResponse.json({ error: "Name, email, and message are required" }, { status: 400 })
     }
 
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(email)) {
-      return NextResponse.json({ error: "Please provide a valid email address" }, { status: 400 })
-    }
-
-    // Log the contact information (in a real app, you would send an email or save to a database)
+    // Log the contact information (in a real app, you would save this to a database)
     console.log("Contact form submission:", {
       name,
       email,
@@ -34,7 +24,7 @@ export async function POST(request) {
       timestamp: new Date().toISOString(),
     })
 
-    // Return success response
+    // Return success
     return NextResponse.json({
       success: true,
       message: "Contact information received successfully",
@@ -46,8 +36,7 @@ export async function POST(request) {
       },
     })
   } catch (error) {
-    // Handle any unexpected errors
-    console.error("Server error in send API route:", error)
+    console.error("Server error in simple contact API route:", error)
     return NextResponse.json(
       {
         error: "Server error processing your request",

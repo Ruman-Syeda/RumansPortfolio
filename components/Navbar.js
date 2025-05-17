@@ -80,6 +80,11 @@ export default function Navbar() {
             Experience
           </Link>
         </li>
+        <li className={pathname === "/certificates" ? styles.active : ""}>
+          <Link href="/certificates" onClick={closeMenu}>
+            Certificates
+          </Link>
+        </li>
         <li className={pathname === "/contact" ? styles.active : ""}>
           <Link href="/contact" onClick={closeMenu}>
             Contact
