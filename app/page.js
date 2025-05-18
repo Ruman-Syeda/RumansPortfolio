@@ -110,7 +110,7 @@ export default function Home() {
             </motion.div>
           </div>
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 2 }}
@@ -131,7 +131,7 @@ export default function Home() {
             >
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </div>

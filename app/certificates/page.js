@@ -45,7 +45,7 @@ export default function CertificatesPage() {
     date: "January 2024",
     description:
       "Won 1st place by developing ‘Maple Care,’ an app that compares sexual health policies across Canadian provinces and improves access to information for youth.",
-    image: "/mapleCert.png?height=400&width=600",
+    image: "/MapleCert.png?height=400&width=600",
     skills: ["App Development", "Policy Research", "Sexual Health", "Innovation"],
     link: "/certificates/maple-care.pdf",
   },

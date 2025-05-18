@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Mail, Phone, MapPin, Linkedin, Github, Twitter } from "lucide-react"
+import { Mail, Phone, MapPin, Linkedin, Github, Twitter, X } from "lucide-react"
 import AnimatedBackground from "@/components/AnimatedBackground"
 import styles from "./contact.module.css"
 
@@ -82,14 +82,38 @@ export default function ContactPage() {
               <Linkedin />
               <span>LinkedIn</span>
             </a>
+
             <a href="https://github.com/Ruman-Syeda" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
               <Github />
               <span>GitHub</span>
             </a>
-            <a href="https://x.com/RumannSyeda" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-              <Twitter />
-              <span>Twitter</span>
+
+           <a href="https://x.com/RumannSyeda" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 1200 1227"
+                fill="currentColor"
+              >
+                <path d="M714.2 508.2L1168.3 0H1062L670.8 459.4 357.4 0H0L478.1 705.5 0 1227h106.3l415.5-478.4L850.2 1227H1200L714.2 508.2ZM589.8 686.4l-47.9-68.7L142.2 82.6h156.1l316.5 454.3 47.9 68.7 429.2 615.8H936.4L589.8 686.4Z" />
+              </svg>
+              <span>X</span>
             </a>
+
+            <a href="https://instagram.com/iosonoromeo" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm5.75-2a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/>
+              </svg>
+              <span>Instagram</span>
+            </a>
+
           </div>
 
           <div className={styles.resumeSection}>

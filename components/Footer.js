@@ -41,7 +41,20 @@ export default function Footer() {
               <circle cx="4" cy="4" r="2"></circle>
             </svg>
           </Link>
-          <Link href="https://x.com/RumannSyeda" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+         <Link href="https://x.com/RumannSyeda" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 1200 1227"
+              fill="currentColor"
+            >
+              <path d="M714.2 508.2L1168.3 0H1062L670.8 459.4 357.4 0H0L478.1 705.5 0 1227h106.3l415.5-478.4L850.2 1227H1200L714.2 508.2ZM589.8 686.4l-47.9-68.7L142.2 82.6h156.1l316.5 454.3 47.9 68.7 429.2 615.8H936.4L589.8 686.4Z" />
+            </svg>
+          </Link>
+
+
+          <Link href="https://instagram.com/iosonoromeo" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -53,9 +66,13 @@ export default function Footer() {
               strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
             </svg>
           </Link>
+
+
           <Link href="mailto:syeddaruman@gmail.com" className={styles.socialLink}>
             <svg
               xmlns="http://www.w3.org/2000/svg"

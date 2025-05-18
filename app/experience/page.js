@@ -139,7 +139,7 @@ export default function ExperiencePage() {
       title: "Portfolio Website",
       subtitle: "Personal Portfolio Website",
       period: "Jan 2024 – Present",
-      image: "/portfolio.png?height=200&width=350",
+      image: "/Portfolio.png?height=200&width=350",
       description:
         "A personal portfolio website showcasing my skills, projects, and experience. Built using Next.js, React, and Tailwind CSS for a modern and responsive design.",
       technologies: ["Next.js", "React", "Tailwind CSS"],
