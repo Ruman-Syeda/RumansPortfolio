@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 :root {
+  /* Dark theme (default) */
   --background: #000000;
   --background-secondary: #0a0a0a;
   --foreground: #f5f5f5;
@@ -8,11 +9,50 @@
   --foreground-muted: #888888;
   --accent: #111111;
   --border: #222222;
+  --border-subtle: rgba(79, 159, 255, 0.1);
   --primary: #2563eb;
   --secondary: #3b82f6;
   --neon: #4f9fff;
   --neon-glow: 0 0 5px #4f9fff, 0 0 10px #4f9fff;
+  --neon-glow-subtle: 0 0 3px rgba(79, 159, 255, 0.5);
   --card-bg: rgba(15, 15, 20, 0.6);
+  --navbar-bg: rgba(0, 0, 0, 0.8);
+  --mobile-menu-bg: rgba(0, 0, 0, 0.95);
+  --theme-toggle-bg: rgba(255, 255, 255, 0.05);
+  --theme-toggle-hover: rgba(255, 255, 255, 0.1);
+  --card-text: #f5f5f5;
+  --card-text-secondary: #d0d0d0;
+  --card-border: rgba(79, 159, 255, 0.1);
+  --skill-bar-bg: rgba(255, 255, 255, 0.1);
+  --skill-progress-bg: linear-gradient(90deg, var(--primary), var(--secondary));
+  --skill-progress-shadow: 0 0 10px rgba(0, 238, 255, 0.5);
+}
+
+.light {
+  --background: #f5f7fa;
+  --background-secondary: #e9ecef;
+  --foreground: #1a202c;
+  --foreground-secondary: #2d3748;
+  --foreground-muted: #4a5568;
+  --accent: #f1f5f9;
+  --border: #e2e8f0;
+  --border-subtle: rgba(37, 99, 235, 0.1);
+  --primary: #2563eb;
+  --secondary: #3b82f6;
+  --neon: #2563eb;
+  --neon-glow: 0 0 3px rgba(37, 99, 235, 0.5);
+  --neon-glow-subtle: 0 0 2px rgba(37, 99, 235, 0.3);
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --navbar-bg: rgba(255, 255, 255, 0.8);
+  --mobile-menu-bg: rgba(255, 255, 255, 0.95);
+  --theme-toggle-bg: rgba(0, 0, 0, 0.05);
+  --theme-toggle-hover: rgba(0, 0, 0, 0.1);
+  --card-text: #1a202c;
+  --card-text-secondary: #2d3748;
+  --card-border: rgba(37, 99, 235, 0.2);
+  --skill-bar-bg: rgba(37, 99, 235, 0.1);
+  --skill-progress-bg: linear-gradient(90deg, #2563eb, #3b82f6);
+  --skill-progress-shadow: 0 0 10px rgba(37, 99, 235, 0.3);
 }
 
 * {
@@ -34,7 +74,6 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  background-color: #000000;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -65,7 +104,7 @@ a {
   font-size: 2.5rem;
   margin-bottom: 2rem;
   color: var(--neon);
-  text-shadow: var(--neon-glow);
+  text-shadow: var(--neon-glow-subtle);
   text-align: center;
   position: relative;
   font-weight: 700;
@@ -79,7 +118,7 @@ a {
   margin-bottom: 2rem;
   padding-bottom: 0.5rem;
   color: var(--neon);
-  text-shadow: 0 0 5px var(--neon);
+  text-shadow: var(--neon-glow-subtle);
   font-weight: 600;
   font-family: "Poppins", sans-serif;
 }
@@ -92,12 +131,12 @@ a {
   width: 50%;
   height: 2px;
   background: var(--neon);
-  box-shadow: 0 0 5px var(--neon);
+  box-shadow: var(--neon-glow-subtle);
 }
 
 .neon-text {
   color: var(--neon);
-  text-shadow: var(--neon-glow);
+  text-shadow: var(--neon-glow-subtle);
 }
 
 .card {
@@ -105,8 +144,21 @@ a {
   border-radius: 8px;
   padding: 1.5rem;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(79, 159, 255, 0.1);
+  border: 1px solid var(--border-subtle);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: var(--card-text);
+}
+
+.card h2,
+.card h3,
+.card h4,
+.card h5,
+.card h6 {
+  color: var(--card-text);
+}
+
+.card p {
+  color: var(--card-text-secondary);
 }
 
 .card:hover {
@@ -121,7 +173,7 @@ a {
   background-color: var(--neon);
   margin-left: 2px;
   animation: blink 1s infinite;
-  box-shadow: var(--neon-glow);
+  box-shadow: var(--neon-glow-subtle);
 }
 
 @keyframes blink {
@@ -177,7 +229,7 @@ a {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  background-color: rgba(15, 15, 20, 0.8);
+  background-color: var(--accent);
   color: var(--neon);
   transition: all 0.3s ease;
 }

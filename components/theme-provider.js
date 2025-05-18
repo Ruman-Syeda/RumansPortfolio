@@ -43,6 +43,9 @@ export function ThemeProvider({ children, defaultTheme = "dark", storageKey = "t
     setTheme: (newTheme) => {
       setTheme(newTheme)
     },
+    toggleTheme: () => {
+      setTheme(theme === "dark" ? "light" : "dark")
+    },
   }
 
   return (

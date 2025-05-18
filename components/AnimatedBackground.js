@@ -1,10 +1,12 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import { useTheme } from "./theme-provider"
 import styles from "./AnimatedBackground.module.css"
 
 const AnimatedBackground = () => {
   const canvasRef = useRef(null)
+  const { theme } = useTheme()
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -24,12 +26,15 @@ const AnimatedBackground = () => {
 
       for (let i = 0; i < starCount; i++) {
         const size = Math.random() * 1.5 + 0.5
+        const isDark = theme === "dark"
         stars.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
           radius: size,
           originalRadius: size,
-          color: `rgba(79, 159, 255, ${Math.random() * 0.4 + 0.2})`,
+          color: isDark
+            ? `rgba(79, 159, 255, ${Math.random() * 0.4 + 0.2})`
+            : `rgba(37, 99, 235, ${Math.random() * 0.3 + 0.1})`,
           speed: Math.random() * 0.01,
           pulse: Math.random() * Math.PI,
           pulseSpeed: 0.003 + Math.random() * 0.005,
@@ -39,6 +44,21 @@ const AnimatedBackground = () => {
 
     const drawStars = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+      // Set background gradient based on theme
+      const isDark = theme === "dark"
+      const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height)
+
+      if (isDark) {
+        gradient.addColorStop(0, "#000000")
+        gradient.addColorStop(1, "#050510")
+      } else {
+        gradient.addColorStop(0, "#f5f7fa")
+        gradient.addColorStop(1, "#e9ecef")
+      }
+
+      ctx.fillStyle = gradient
+      ctx.fillRect(0, 0, canvas.width, canvas.height)
 
       stars.forEach((star) => {
         // Update pulse
@@ -53,9 +73,13 @@ const AnimatedBackground = () => {
         ctx.fill()
 
         // Add subtle glow effect
+        const isDark = theme === "dark"
+        const glowColor = isDark ? "79, 159, 255" : "37, 99, 235"
+        const glowOpacity = isDark ? 0.1 * pulseFactor : 0.05 * pulseFactor
+
         const glow = ctx.createRadialGradient(star.x, star.y, 0, star.x, star.y, star.radius * 3)
-        glow.addColorStop(0, `rgba(79, 159, 255, ${0.1 * pulseFactor})`)
-        glow.addColorStop(1, "rgba(79, 159, 255, 0)")
+        glow.addColorStop(0, `rgba(${glowColor}, ${glowOpacity})`)
+        glow.addColorStop(1, `rgba(${glowColor}, 0)`)
 
         ctx.beginPath()
         ctx.arc(star.x, star.y, star.radius * 3, 0, Math.PI * 2)
@@ -81,7 +105,7 @@ const AnimatedBackground = () => {
       window.removeEventListener("resize", resizeCanvas)
       cancelAnimationFrame(animationFrameId)
     }
-  }, [])
+  }, [theme])
 
   return <canvas ref={canvasRef} className={styles.canvas} />
 }

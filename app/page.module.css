@@ -27,7 +27,7 @@
   font-size: 1.2rem;
   margin-bottom: 1rem;
   color: var(--neon);
-  text-shadow: 0 0 5px var(--neon);
+  text-shadow: var(--neon-glow-subtle);
   letter-spacing: 2px;
   font-weight: 500;
 }
@@ -36,7 +36,7 @@
   font-size: 4rem;
   margin-bottom: 1rem;
   color: var(--neon);
-  text-shadow: var(--neon-glow);
+  text-shadow: var(--neon-glow-subtle);
   letter-spacing: 2px;
   font-weight: 700;
 }
@@ -46,9 +46,9 @@
   margin-bottom: 3rem;
   color: var(--foreground-secondary);
   padding: 0.75rem 2.5rem;
-  border: 1px solid rgba(79, 159, 255, 0.3);
+  border: 1px solid var(--card-border);
   border-radius: 30px;
-  background-color: rgba(79, 159, 255, 0.05);
+  background-color: var(--card-bg);
   min-width: 300px;
   min-height: 60px;
   display: flex;
@@ -100,13 +100,13 @@
   border-radius: 30px;
   background-color: transparent;
   color: var(--foreground);
-  border: 1px solid rgba(79, 159, 255, 0.5);
+  border: 1px solid var(--card-border);
   transition: all 0.3s ease;
 }
 
 .contactButton:hover {
-  background-color: rgba(79, 159, 255, 0.1);
-  border-color: rgba(79, 159, 255, 0.8);
+  background-color: var(--card-bg);
+  border-color: var(--neon);
   box-shadow: 0 0 20px rgba(79, 159, 255, 0.3);
   transform: translateY(-3px);
 }
